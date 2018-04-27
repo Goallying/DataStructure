@@ -98,10 +98,18 @@
 
     
     
-//    1,3,4,7,9,        10,     33,35,44,66,99
-    NSArray * array = @[@"1",@"4",@"3",@"10",@"44",@"33",@"9",@"66",@"35",@"7",@"99"];
+    NSArray * array = @[@"1",@"7",@"2",@"3",@"4",@"6",@"5",@"99",@"11",@"22"];
     AVL_Tree * tree  = [[AVL_Tree alloc]initWithNums:array];
     NSLog(@"=== %@",tree);
+    
+    [tree insert_value:@"100"];
+    [tree insert_value:@"104"];
+    [tree insert_value:@"105"];
+    [tree insert_value:@"106"];
+    [tree insert_value:@"107"];
+
+    NSLog(@"=== %@",tree);
+
     
 }
 

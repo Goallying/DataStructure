@@ -15,7 +15,10 @@ typedef NS_ENUM(NSInteger , NODE_DIRECTION){
     NODE_DIRECTION_R
 } ;
 
-@implementation AVL_Tree
+@implementation AVL_Tree {
+    
+    NSMutableArray * _arrayM  ;
+}
 
 - (instancetype)initWithNums:(NSArray *)array {
     if (self = [super init]) {
@@ -32,17 +35,25 @@ typedef NS_ENUM(NSInteger , NODE_DIRECTION){
         _left_depth = 0 ;
         _right_depth = 0 ;
         _depth = 0 ;
-        
-        [self building:sortedArray];
+    
+        _arrayM = [sortedArray mutableCopy];
+        [self building:_arrayM];
         
     }
     return self ;
 }
 
-- (void)building:(NSArray *)array {
+- (void)building:(NSMutableArray *)array {
     
     _root = [self root_for_nums:array direction:NODE_DIRECTION_M];
-    _depth = MAX(_left_depth + 1, _right_depth + 1);
+    [self set_info];
+}
+
+- (void)set_info{
+    _nodecount = _arrayM.count ;
+    _left_depth = [self height_for_node:_root.left];
+    _right_depth = [self height_for_node:_root.right];
+    _depth = MAX(_left_depth + 1, _right_depth + 1) ;
 }
 
 - (AVLNode *)root_for_nums:(NSArray *)array direction:(NODE_DIRECTION)direction{
@@ -50,6 +61,8 @@ typedef NS_ENUM(NSInteger , NODE_DIRECTION){
     if (!array ||array.count == 0) {
         return nil ;
     }
+ 
+    
     NSInteger mid_idx = array.count /2 ;
     NSString *mid_str = array[mid_idx];
     
@@ -69,6 +82,125 @@ typedef NS_ENUM(NSInteger , NODE_DIRECTION){
     node.right = right ;
     
     return node ;
+    
+}
+
+- (void)insert_value:(NSString *)val {
+    // 不允许重复值的出现
+    if ([_arrayM containsObject:val]) {
+        return ;
+    }
+    AVLNode * node = [AVLNode new];
+    node.value = val ;
+    if (!_root) {
+        _root = node ;
+        _depth ++ ;
+        _nodecount = 1 ;
+        return ;
+    }
+    AVLNode * target = _root ;
+    BOOL done = NO ;
+    while (target && done == NO) {
+        if (node.number > target.number) {
+            if (!target.right) {
+                target.right = node ;
+                node.root = target ;
+                [self l_turn:target];
+                done = YES ;
+            }else{
+                target = target.right ;
+            }
+        }else{
+            if (!target.left) {
+                target.left = node ;
+                node.root = target ;
+                [self r_turn:target];
+                done = YES ;
+            }else{
+                target = target.left ;
+            }
+        }
+    }
+    [self set_info];
+    
+    // 整棵树旋转。有可能需要。
+    if (labs(_left_depth - _right_depth) >= 2) {
+        
+        if (_right_depth > _left_depth) {
+            
+            AVLNode * cur = _root ;
+            AVLNode * right = cur.right ;
+            AVLNode * right_left = right.left ;
+            
+            _root = right ;
+            _root.root = nil ;
+            _root.left = cur ;
+            
+            cur.right = right_left ;
+            right_left.root = cur ;
+            
+        }else{
+            
+            AVLNode * cur = _root ;
+            AVLNode * left = cur.left ;
+            AVLNode * left_right = cur.right ;
+            
+            _root = left ;
+            _root.root = nil ;
+            _root.right = cur ;
+            
+            cur.left = left_right ;
+            left_right.root = cur ;
+        }
+        
+        [self set_info];
+    }
+    
+   
+}
+//右旋转
+- (void)r_turn:(AVLNode *)cur {
+    
+    if (cur.right) {
+        return ;
+    }
+    AVLNode * gradfather = cur.root.root ;
+    AVLNode * father = cur.root ;
+    
+    gradfather.left = cur ;
+    cur.root = gradfather ;
+    cur.right = father ;
+    
+    father.root = cur ;
+    father.left = nil ;
+}
+
+//左旋转
+- (void)l_turn:(AVLNode *)cur {
+    
+    if (cur.root.left) {
+        return ;
+    }
+    
+    AVLNode * gradfather = cur.root.root ;
+    AVLNode * father = cur.root ;
+    
+    gradfather.right = cur ;
+    cur.root = gradfather ;
+    cur.left = father ;
+    
+    father.root = cur ;
+    father.right = nil ;
+}
+
+- (NSInteger)height_for_node:(AVLNode *)n {
+    
+    if (!n) return 0 ;
+    
+    NSInteger lh = [self height_for_node:n.left];
+    NSInteger rh = [self height_for_node:n.right];
+    
+    return MAX(lh + 1, rh + 1);
     
 }
 

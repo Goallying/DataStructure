@@ -19,4 +19,7 @@
 @property (nonatomic ,assign ,readonly)NSInteger nodecount ;
 @property (nonatomic ,strong ,readonly)AVLNode * root ;
 
+
+- (void)insert_value:(NSString *)val ;
+
 @end
