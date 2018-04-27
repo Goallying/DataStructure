@@ -123,7 +123,7 @@ typedef NS_ENUM(NSInteger , NODE_DIRECTION){
     }
     [self set_info];
     
-    // 整棵树旋转。有可能需要。
+    // 整棵树旋转。有可能需要。（比如不断在右边插入数据，局部平衡过后，在某一时刻必将导致整棵树的失衡）。
     if (labs(_left_depth - _right_depth) >= 2) {
         
         if (_right_depth > _left_depth) {
