@@ -108,6 +108,7 @@
     [tree insert_value:@"106"];
     [tree insert_value:@"107"];
 
+    AVLNode * n = [tree node_for_value:@"5"];
     NSLog(@"=== %@",tree);
 
     

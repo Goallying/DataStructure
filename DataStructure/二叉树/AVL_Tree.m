@@ -87,9 +87,10 @@ typedef NS_ENUM(NSInteger , NODE_DIRECTION){
 
 - (void)insert_value:(NSString *)val {
     // 不允许重复值的出现
-    if ([_arrayM containsObject:val]) {
+    if ([_arrayM containsObject:val] || val.length == 0) {
         return ;
     }
+    [_arrayM addObject:val];
     AVLNode * node = [AVLNode new];
     node.value = val ;
     if (!_root) {
@@ -122,41 +123,59 @@ typedef NS_ENUM(NSInteger , NODE_DIRECTION){
         }
     }
     [self set_info];
-    
     // 整棵树旋转。有可能需要。（比如不断在右边插入数据，局部平衡过后，在某一时刻必将导致整棵树的失衡）。
     if (labs(_left_depth - _right_depth) >= 2) {
-        
         if (_right_depth > _left_depth) {
-            
-            AVLNode * cur = _root ;
-            AVLNode * right = cur.right ;
-            AVLNode * right_left = right.left ;
-            
-            _root = right ;
-            _root.root = nil ;
-            _root.left = cur ;
-            
-            cur.right = right_left ;
-            right_left.root = cur ;
-            
+            [self tree_l_turn];
         }else{
-            
-            AVLNode * cur = _root ;
-            AVLNode * left = cur.left ;
-            AVLNode * left_right = cur.right ;
-            
-            _root = left ;
-            _root.root = nil ;
-            _root.right = cur ;
-            
-            cur.left = left_right ;
-            left_right.root = cur ;
+            [self tree_r_turn];
         }
-        
         [self set_info];
     }
-    
    
+}
+- (AVLNode *)node_for_value:(NSString *)val {
+    
+    AVLNode * cur = _root ;
+    NSInteger number = [val integerValue];
+    
+    while (cur && cur.number != number) {
+//        NSLog(@"search---%@",cur.value);
+        if (number > cur.number) {
+            cur = cur.right ;
+        }else{
+            cur = cur.left ;
+        }
+    }
+    return cur ;
+}
+
+//树的左旋转
+- (void)tree_l_turn {
+    AVLNode * cur = _root ;
+    AVLNode * right = cur.right ;
+    AVLNode * right_left = right.left ;
+    
+    _root = right ;
+    _root.root = nil ;
+    _root.left = cur ;
+    
+    cur.right = right_left ;
+    right_left.root = cur ;
+}
+//树的右旋转
+- (void)tree_r_turn {
+    
+    AVLNode * cur = _root ;
+    AVLNode * left = cur.left ;
+    AVLNode * left_right = cur.right ;
+    
+    _root = left ;
+    _root.root = nil ;
+    _root.right = cur ;
+    
+    cur.left = left_right ;
+    left_right.root = cur ;
 }
 //右旋转
 - (void)r_turn:(AVLNode *)cur {

@@ -10,8 +10,6 @@
 
 @implementation AVLNode
 
-
-
 - (NSInteger)number{
     
     if (_number == 0 ||!_number) {

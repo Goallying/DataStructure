@@ -15,11 +15,13 @@
 @property (nonatomic ,assign ,readonly)NSInteger depth ;
 @property (nonatomic ,assign ,readonly)NSInteger left_depth ;
 @property (nonatomic ,assign ,readonly)NSInteger right_depth ;
-
 @property (nonatomic ,assign ,readonly)NSInteger nodecount ;
+
 @property (nonatomic ,strong ,readonly)AVLNode * root ;
 
 
 - (void)insert_value:(NSString *)val ;
+- (AVLNode *)node_for_value:(NSString *)val ;
+
 
 @end
