@@ -22,4 +22,6 @@
 
 - (void)remove_obj_for_key:(NSString *)key ;
 - (id)value_for_key:(NSString *)key ;
+
+- (void)print_all_nodes ;
 @end

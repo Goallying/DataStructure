@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5500C3252094495D00688831 /* string_replace.c in Sources */ = {isa = PBXBuildFile; fileRef = 5500C3232094495D00688831 /* string_replace.c */; };
+		5526D9E920945B8600D0934E /* examinations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5526D9E720945B8600D0934E /* examinations.cpp */; };
+		5526D9F12094639D00D0934E /* DataStructureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5526D9F02094639D00D0934E /* DataStructureTests.m */; };
 		AE0FFD8D208B5D2B006CDB0D /* SingleLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0FFD8C208B5D2B006CDB0D /* SingleLinkedList.m */; };
 		AE0FFD90208B6A86006CDB0D /* SingleLinkedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0FFD8F208B6A86006CDB0D /* SingleLinkedNode.m */; };
 		AE38410C209211CB005829D3 /* AVL_Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = AE38410B209211CB005829D3 /* AVL_Tree.m */; };
@@ -17,7 +18,7 @@
 		AE4E720E208C8EF800D9552C /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4E720D208C8EF800D9552C /* Tree.m */; };
 		AE4E7210208C8FC600D9552C /* Tree in Resources */ = {isa = PBXBuildFile; fileRef = AE4E720F208C8FC600D9552C /* Tree */; };
 		AE66BFA92078939200C4459A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE66BFA82078939200C4459A /* AppDelegate.m */; };
-		AE66BFAC2078939200C4459A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE66BFAB2078939200C4459A /* ViewController.m */; };
+		AE66BFAC2078939200C4459A /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE66BFAB2078939200C4459A /* ViewController.mm */; };
 		AE66BFAF2078939200C4459A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE66BFAD2078939200C4459A /* Main.storyboard */; };
 		AE66BFB12078939200C4459A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE66BFB02078939200C4459A /* Assets.xcassets */; };
 		AE66BFB42078939200C4459A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE66BFB22078939200C4459A /* LaunchScreen.storyboard */; };
@@ -25,9 +26,22 @@
 		AE66BFBF2078977800C4459A /* OBJECT.m in Sources */ = {isa = PBXBuildFile; fileRef = AE66BFBE2078977800C4459A /* OBJECT.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5526D9F32094639D00D0934E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE66BF9C2078939200C4459A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE66BFA32078939200C4459A;
+			remoteInfo = DataStructure;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		5500C3232094495D00688831 /* string_replace.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = string_replace.c; sourceTree = "<group>"; };
-		5500C3242094495D00688831 /* string_replace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = string_replace.h; sourceTree = "<group>"; };
+		5526D9E720945B8600D0934E /* examinations.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = examinations.cpp; sourceTree = "<group>"; };
+		5526D9E820945B8600D0934E /* examinations.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = examinations.hpp; sourceTree = "<group>"; };
+		5526D9EE2094639D00D0934E /* DataStructureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataStructureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5526D9F02094639D00D0934E /* DataStructureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataStructureTests.m; sourceTree = "<group>"; };
+		5526D9F22094639D00D0934E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE0FFD8B208B5D2B006CDB0D /* SingleLinkedList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleLinkedList.h; sourceTree = "<group>"; };
 		AE0FFD8C208B5D2B006CDB0D /* SingleLinkedList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleLinkedList.m; sourceTree = "<group>"; };
 		AE0FFD8E208B6A86006CDB0D /* SingleLinkedNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleLinkedNode.h; sourceTree = "<group>"; };
@@ -47,7 +61,7 @@
 		AE66BFA72078939200C4459A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AE66BFA82078939200C4459A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AE66BFAA2078939200C4459A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AE66BFAB2078939200C4459A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AE66BFAB2078939200C4459A /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		AE66BFAE2078939200C4459A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE66BFB02078939200C4459A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE66BFB32078939200C4459A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,6 +72,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5526D9EB2094639D00D0934E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE66BFA12078939200C4459A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -71,10 +92,19 @@
 		5500C30F2094257F00688831 /* Examination */ = {
 			isa = PBXGroup;
 			children = (
-				5500C3242094495D00688831 /* string_replace.h */,
-				5500C3232094495D00688831 /* string_replace.c */,
+				5526D9E820945B8600D0934E /* examinations.hpp */,
+				5526D9E720945B8600D0934E /* examinations.cpp */,
 			);
 			path = Examination;
+			sourceTree = "<group>";
+		};
+		5526D9EF2094639D00D0934E /* DataStructureTests */ = {
+			isa = PBXGroup;
+			children = (
+				5526D9F02094639D00D0934E /* DataStructureTests.m */,
+				5526D9F22094639D00D0934E /* Info.plist */,
+			);
+			path = DataStructureTests;
 			sourceTree = "<group>";
 		};
 		AE0FFD89208B5CD3006CDB0D /* 单向链表 */ = {
@@ -117,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				AE66BFA62078939200C4459A /* DataStructure */,
+				5526D9EF2094639D00D0934E /* DataStructureTests */,
 				AE66BFA52078939200C4459A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				AE66BFA42078939200C4459A /* DataStructure.app */,
+				5526D9EE2094639D00D0934E /* DataStructureTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,7 +173,7 @@
 				AE66BFBD2078977800C4459A /* OBJECT.h */,
 				AE66BFBE2078977800C4459A /* OBJECT.m */,
 				AE66BFAA2078939200C4459A /* ViewController.h */,
-				AE66BFAB2078939200C4459A /* ViewController.m */,
+				AE66BFAB2078939200C4459A /* ViewController.mm */,
 				AE66BFAD2078939200C4459A /* Main.storyboard */,
 				AE66BFB02078939200C4459A /* Assets.xcassets */,
 				AE66BFB22078939200C4459A /* LaunchScreen.storyboard */,
@@ -154,6 +186,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5526D9ED2094639D00D0934E /* DataStructureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5526D9F52094639D00D0934E /* Build configuration list for PBXNativeTarget "DataStructureTests" */;
+			buildPhases = (
+				5526D9EA2094639D00D0934E /* Sources */,
+				5526D9EB2094639D00D0934E /* Frameworks */,
+				5526D9EC2094639D00D0934E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5526D9F42094639D00D0934E /* PBXTargetDependency */,
+			);
+			name = DataStructureTests;
+			productName = DataStructureTests;
+			productReference = 5526D9EE2094639D00D0934E /* DataStructureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		AE66BFA32078939200C4459A /* DataStructure */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE66BFBA2078939300C4459A /* Build configuration list for PBXNativeTarget "DataStructure" */;
@@ -180,6 +230,11 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "朱来飞";
 				TargetAttributes = {
+					5526D9ED2094639D00D0934E = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = AE66BFA32078939200C4459A;
+					};
 					AE66BFA32078939200C4459A = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -200,11 +255,19 @@
 			projectRoot = "";
 			targets = (
 				AE66BFA32078939200C4459A /* DataStructure */,
+				5526D9ED2094639D00D0934E /* DataStructureTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5526D9EC2094639D00D0934E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE66BFA22078939200C4459A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -219,11 +282,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5526D9EA2094639D00D0934E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5526D9F12094639D00D0934E /* DataStructureTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE66BFA02078939200C4459A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE66BFAC2078939200C4459A /* ViewController.m in Sources */,
+				AE66BFAC2078939200C4459A /* ViewController.mm in Sources */,
 				AE38410C209211CB005829D3 /* AVL_Tree.m in Sources */,
 				AE66BFB72078939300C4459A /* main.m in Sources */,
 				AE4E7207208C359A00D9552C /* LinkedMap.m in Sources */,
@@ -231,14 +302,22 @@
 				AE4E720E208C8EF800D9552C /* Tree.m in Sources */,
 				AE66BFBF2078977800C4459A /* OBJECT.m in Sources */,
 				AE0FFD8D208B5D2B006CDB0D /* SingleLinkedList.m in Sources */,
+				5526D9E920945B8600D0934E /* examinations.cpp in Sources */,
 				AE38410F209211EB005829D3 /* AVLNode.m in Sources */,
 				AE4E720A208C35A400D9552C /* MapNode.m in Sources */,
 				AE66BFA92078939200C4459A /* AppDelegate.m in Sources */,
-				5500C3252094495D00688831 /* string_replace.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5526D9F42094639D00D0934E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE66BFA32078939200C4459A /* DataStructure */;
+			targetProxy = 5526D9F32094639D00D0934E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AE66BFAD2078939200C4459A /* Main.storyboard */ = {
@@ -260,6 +339,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5526D9F62094639D00D0934E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DataStructureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DataStructure.DataStructureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DataStructure.app/DataStructure";
+			};
+			name = Debug;
+		};
+		5526D9F72094639D00D0934E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DataStructureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DataStructure.DataStructureTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DataStructure.app/DataStructure";
+			};
+			name = Release;
+		};
 		AE66BFB82078939300C4459A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -296,6 +403,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -350,6 +458,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -397,6 +506,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5526D9F52094639D00D0934E /* Build configuration list for PBXNativeTarget "DataStructureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5526D9F62094639D00D0934E /* Debug */,
+				5526D9F72094639D00D0934E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AE66BF9F2078939200C4459A /* Build configuration list for PBXProject "DataStructure" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

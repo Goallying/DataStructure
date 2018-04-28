@@ -10,7 +10,7 @@
 #import "SingleLinkedList.h"
 #import "LinkedMap.h"
 #import "AVL_Tree.h"
-#import "string_replace.h"
+#import "examinations.hpp"
 
 
 @interface ViewController ()
@@ -114,10 +114,7 @@
 //    AVLNode * n = [tree node_for_value:@"5"];
 //    NSLog(@"=== %@",tree);
 
-    
-    char * s = "we are happy! ";
-    replace_string(s, 13);
-    
+   
     
 }
 

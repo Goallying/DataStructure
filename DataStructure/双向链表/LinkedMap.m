@@ -122,6 +122,7 @@
     MapNode * nd = [self node_for_key:key];
     return nd.value ;
 }
+
 - (MapNode *)node_for_key:(NSString *)key {
     
     if (key.length == 0 ||!key||_lenth == 0) {
@@ -144,7 +145,9 @@
         }
     }
     return result ;
-    
 }
 
+- (void)print_all_nodes {
+    
+}
 @end

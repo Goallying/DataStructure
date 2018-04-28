@@ -24,6 +24,6 @@
 - (void)removeAllObj ;
 
 - (void)reverse ;
-
+- (void)print_all_nodes ;
 
 @end
