@@ -134,6 +134,20 @@ typedef NS_ENUM(NSInteger , NODE_DIRECTION){
     }
    
 }
+- (void)remove_value:(NSString *)val {
+    
+    if (!val || val.length == 0 || ![_arrayM containsObject:val]) {
+        return ;
+    }
+    AVLNode * node = [self node_for_value:val];
+    AVLNode * root = node.root ;
+    AVLNode * left = node.left ;
+    AVLNode * right = node.right ;
+    
+    
+    
+}
+
 - (AVLNode *)node_for_value:(NSString *)val {
     
     AVLNode * cur = _root ;

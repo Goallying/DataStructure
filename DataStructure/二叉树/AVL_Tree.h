@@ -21,7 +21,7 @@
 
 
 - (void)insert_value:(NSString *)val ;
+- (void)remove_value:(NSString *)val ;
 - (AVLNode *)node_for_value:(NSString *)val ;
-
 
 @end
