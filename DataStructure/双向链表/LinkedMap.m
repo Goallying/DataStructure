@@ -14,11 +14,15 @@
 
 #import "LinkedMap.h"
 
-@implementation LinkedMap
+@implementation LinkedMap {
+    CFMutableDictionaryRef _dic ;
+}
 
 - (instancetype)init{
     if (self = [super init]) {
         _lenth = 0 ;
+        _dic = CFDictionaryCreateMutable(kCFAllocatorDefault, 0, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks) ;
+        
     }
     return self ;
 }
@@ -27,13 +31,14 @@
     if (!obj || key.length == 0 || !key) {
         return ;
     }
-    MapNode * nd = [self node_for_key:key] ;
+    MapNode * nd = CFDictionaryGetValue(_dic,  (__bridge const void *)key) ;
     if (nd) {
         nd.value = obj ;
         return ;
     }
     MapNode * node = [[MapNode alloc]initWithKey:key value:obj];
     node.value = obj ;
+
     if (_lenth == 0) {
         _header = node ;
         _tail = node ;
@@ -42,6 +47,7 @@
         node.preNode = _tail ;
         _tail = node ;
     }
+    CFDictionarySetValue(_dic,  (__bridge const void *)key, (__bridge const void *)node) ;
     _lenth ++ ;
     
 }
@@ -55,7 +61,7 @@
         _header.value = value ;
         return ;
     }
-    MapNode * nd = [self node_for_key:key];
+    MapNode * nd = CFDictionaryGetValue(_dic,  (__bridge const void *)key) ;
     if (nd) {
         MapNode * pre = nd.preNode ;
         MapNode * next = nd.nextNode ;
@@ -79,6 +85,7 @@
             node.nextNode = _header ;
             _header = node ;
         }
+        CFDictionarySetValue(_dic,  (__bridge const void *)key, (__bridge const void *)node) ;
         _lenth ++ ;
     }
 }
@@ -88,7 +95,7 @@
         return ;
     }
     //不存在
-    MapNode * node = [self node_for_key:key] ;
+    MapNode * node = CFDictionaryGetValue(_dic,  (__bridge const void *)key) ;
     if (!node) {
         return ;
     }
@@ -119,7 +126,7 @@
 }
 
 - (id)value_for_key:(NSString *)key {
-    MapNode * nd = [self node_for_key:key];
+    MapNode * nd = CFDictionaryGetValue(_dic,  (__bridge const void *)key) ;
     return nd.value ;
 }
 
@@ -148,6 +155,9 @@
 }
 
 - (void)print_all_nodes {
+    if (!_header) {
+        return ;
+    }
     
 }
 @end
