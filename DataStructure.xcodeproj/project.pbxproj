@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5500C3252094495D00688831 /* string_replace.c in Sources */ = {isa = PBXBuildFile; fileRef = 5500C3232094495D00688831 /* string_replace.c */; };
 		AE0FFD8D208B5D2B006CDB0D /* SingleLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0FFD8C208B5D2B006CDB0D /* SingleLinkedList.m */; };
 		AE0FFD90208B6A86006CDB0D /* SingleLinkedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0FFD8F208B6A86006CDB0D /* SingleLinkedNode.m */; };
 		AE38410C209211CB005829D3 /* AVL_Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = AE38410B209211CB005829D3 /* AVL_Tree.m */; };
@@ -22,10 +23,11 @@
 		AE66BFB42078939200C4459A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE66BFB22078939200C4459A /* LaunchScreen.storyboard */; };
 		AE66BFB72078939300C4459A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE66BFB62078939300C4459A /* main.m */; };
 		AE66BFBF2078977800C4459A /* OBJECT.m in Sources */ = {isa = PBXBuildFile; fileRef = AE66BFBE2078977800C4459A /* OBJECT.m */; };
-		AE66BFC22078B89700C4459A /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = AE66BFC12078B89700C4459A /* List.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5500C3232094495D00688831 /* string_replace.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = string_replace.c; sourceTree = "<group>"; };
+		5500C3242094495D00688831 /* string_replace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = string_replace.h; sourceTree = "<group>"; };
 		AE0FFD8B208B5D2B006CDB0D /* SingleLinkedList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleLinkedList.h; sourceTree = "<group>"; };
 		AE0FFD8C208B5D2B006CDB0D /* SingleLinkedList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleLinkedList.m; sourceTree = "<group>"; };
 		AE0FFD8E208B6A86006CDB0D /* SingleLinkedNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleLinkedNode.h; sourceTree = "<group>"; };
@@ -53,8 +55,6 @@
 		AE66BFB62078939300C4459A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AE66BFBD2078977800C4459A /* OBJECT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBJECT.h; sourceTree = "<group>"; };
 		AE66BFBE2078977800C4459A /* OBJECT.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBJECT.m; sourceTree = "<group>"; };
-		AE66BFC02078B89700C4459A /* List.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
-		AE66BFC12078B89700C4459A /* List.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = List.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +68,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5500C30F2094257F00688831 /* Examination */ = {
+			isa = PBXGroup;
+			children = (
+				5500C3242094495D00688831 /* string_replace.h */,
+				5500C3232094495D00688831 /* string_replace.c */,
+			);
+			path = Examination;
+			sourceTree = "<group>";
+		};
 		AE0FFD89208B5CD3006CDB0D /* 单向链表 */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,15 +86,6 @@
 				AE0FFD8C208B5D2B006CDB0D /* SingleLinkedList.m */,
 			);
 			path = "单向链表";
-			sourceTree = "<group>";
-		};
-		AE0FFD8A208B5CE2006CDB0D /* CList */ = {
-			isa = PBXGroup;
-			children = (
-				AE66BFC02078B89700C4459A /* List.h */,
-				AE66BFC12078B89700C4459A /* List.m */,
-			);
-			path = CList;
 			sourceTree = "<group>";
 		};
 		AE0FFD91208B8DF1006CDB0D /* 双向链表 */ = {
@@ -132,7 +132,7 @@
 		AE66BFA62078939200C4459A /* DataStructure */ = {
 			isa = PBXGroup;
 			children = (
-				AE0FFD8A208B5CE2006CDB0D /* CList */,
+				5500C30F2094257F00688831 /* Examination */,
 				AE0FFD91208B8DF1006CDB0D /* 双向链表 */,
 				AE0FFD89208B5CD3006CDB0D /* 单向链表 */,
 				AE4E720B208C8EDF00D9552C /* 二叉树 */,
@@ -223,7 +223,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE66BFC22078B89700C4459A /* List.m in Sources */,
 				AE66BFAC2078939200C4459A /* ViewController.m in Sources */,
 				AE38410C209211CB005829D3 /* AVL_Tree.m in Sources */,
 				AE66BFB72078939300C4459A /* main.m in Sources */,
@@ -235,6 +234,7 @@
 				AE38410F209211EB005829D3 /* AVLNode.m in Sources */,
 				AE4E720A208C35A400D9552C /* MapNode.m in Sources */,
 				AE66BFA92078939200C4459A /* AppDelegate.m in Sources */,
+				5500C3252094495D00688831 /* string_replace.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,8 +369,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_INPUT_FILETYPE = automatic;
 				INFOPLIST_FILE = DataStructure/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = DataStructure.DataStructure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -382,8 +384,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_INPUT_FILETYPE = automatic;
 				INFOPLIST_FILE = DataStructure/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = DataStructure.DataStructure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

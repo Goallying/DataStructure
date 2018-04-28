@@ -10,6 +10,9 @@
 #import "SingleLinkedList.h"
 #import "LinkedMap.h"
 #import "AVL_Tree.h"
+#import "string_replace.h"
+
+
 @interface ViewController ()
 
 @end
@@ -98,19 +101,23 @@
 
     
     
-    NSArray * array = @[@"1",@"7",@"2",@"3",@"4",@"6",@"5",@"99",@"11",@"22"];
-    AVL_Tree * tree  = [[AVL_Tree alloc]initWithNums:array];
-    NSLog(@"=== %@",tree);
+//    NSArray * array = @[@"1",@"7",@"2",@"3",@"4",@"6",@"5",@"99",@"11",@"22"];
+//    AVL_Tree * tree  = [[AVL_Tree alloc]initWithNums:array];
+//    NSLog(@"=== %@",tree);
+//
+//    [tree insert_value:@"100"];
+//    [tree insert_value:@"104"];
+//    [tree insert_value:@"105"];
+//    [tree insert_value:@"106"];
+//    [tree insert_value:@"107"];
+//
+//    AVLNode * n = [tree node_for_value:@"5"];
+//    NSLog(@"=== %@",tree);
+
     
-    [tree insert_value:@"100"];
-    [tree insert_value:@"104"];
-    [tree insert_value:@"105"];
-    [tree insert_value:@"106"];
-    [tree insert_value:@"107"];
-
-    AVLNode * n = [tree node_for_value:@"5"];
-    NSLog(@"=== %@",tree);
-
+    char * s = "we are happy! ";
+    replace_string(s, 13);
+    
     
 }
 
