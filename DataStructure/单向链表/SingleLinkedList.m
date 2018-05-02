@@ -173,4 +173,8 @@
         cur = cur.nextNode ;
     }
 }
+
+- (void)dealloc{
+    CFRelease(_dic);
+}
 @end

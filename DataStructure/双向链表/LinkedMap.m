@@ -1,9 +1,4 @@
 
-
-
-
-
-
 //
 //  LinkedMap.m
 //  DataStructure
@@ -164,5 +159,8 @@
         cur = cur.preNode ;
     }
     
+}
+- (void)dealloc{
+    CFRelease(_dic);
 }
 @end

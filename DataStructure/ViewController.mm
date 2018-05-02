@@ -34,50 +34,6 @@
     //图形结构：任意两个数据节点都可以关联。
     
     
-    //单向链表
-//    SingleLinkedList * singleList = [SingleLinkedList new];
-//    [singleList set_obj:@"1" for_key:@"1"];
-//    [singleList set_obj:@"2" for_key:@"2"];
-//    [singleList set_obj:@"3" for_key:@"3"];
-//    [singleList set_obj:@"4" for_key:@"4"];
-//    [singleList set_obj:@"5" for_key:@"5"];
-//
-////    [singleList set_obj:@"100" for_key:@"2"];
-////    [singleList set_obj:@"6" for_key:@"6"];
-////
-////    [singleList remove_obj_for_key:@"1"];
-////    [singleList insert_obj_at_head:@"header" for_key:@"header"];
-////    [singleList removeAllObj];
-//        [singleList remove_obj_for_key:@"5"];
-//
-//    [singleList reverse];
-//
-//    NSLog(@"header === %@ ,tail == %@ ,lenth ===%lu" ,singleList.header.obj,singleList.tail.obj ,singleList.length);
-//    SingleLinkedNode * node = singleList.header ;
-//    while (node) {
-//        NSLog(@"===%@",node.obj);
-//        node = node.nextNode ;
-//    }
-
-//    LinkedMap * map = [LinkedMap new];
-//    [map set_obj:@"1" for_key:@"1"];
-//    [map set_obj:@"2" for_key:@"2"];
-//    [map set_obj:@"3" for_key:@"3"];
-//    [map set_obj:@"4" for_key:@"4"];
-//    [map set_obj:@"5" for_key:@"5"];
-//
-////    [map remove_obj_for_key:@"1"];
-////    [map remove_obj_for_key:@"5"];
-//    [map insert_obj_at_head:@"100" for_key:@"100"];
-//
-//    MapNode * node = map.header ;
-//    NSLog(@"header == %@ ,tail === %@ ,length == %lu",map.header.value ,map.tail.value,map.lenth);
-//    while (node) {
-//        NSLog(@"vaule ==== %@" ,node.value);
-//        node = node.nextNode ;
-//    }
-
-
 //    NSString * s = @"1";  //0x10643f0a0  0x10643f0e0  0x10643f100
 //    NSLog(@"p == %p" ,s); // 0x600000250ae0 0x600000250ae8 0x600000250af0
 ////https://www.jianshu.com/p/325abcded1df
@@ -99,20 +55,7 @@
 //    0x600000250b28: 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
 //    0x600000250b30: 0xad 0xbe 0x13 0xe5
 
-    
-    
-//    NSArray * array = @[@"1",@"7",@"2",@"3",@"4",@"6",@"5",@"99",@"11",@"22"];
-//    AVL_Tree * tree  = [[AVL_Tree alloc]initWithNums:array];
-//    NSLog(@"=== %@",tree);
-//
-//    [tree insert_value:@"100"];
-//    [tree insert_value:@"104"];
-//    [tree insert_value:@"105"];
-//    [tree insert_value:@"106"];
-//    [tree insert_value:@"107"];
-//
-//    AVLNode * n = [tree node_for_value:@"5"];
-//    NSLog(@"=== %@",tree);
+
 
    
     
