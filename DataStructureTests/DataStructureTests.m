@@ -9,6 +9,8 @@
 #import <XCTest/XCTest.h>
 #import "LinkedMap.h"
 #import "SingleLinkedList.h"
+#import "ATree.h"
+
 
 #import "examinations.hpp"
 
@@ -60,7 +62,15 @@
 //    [map set_obj:@"5" for_key:@"5"];
 //    [map print_all_nodes_reversily];
 }
-
+#pragma mark -- 重建二叉树
+- (void)test_rebuilding_tree{
+    //先序：ABDEFGCHIJK
+    //中序：DFEGBACIKJH
+    NSArray * pre = @[@"A",@"B",@"D",@"E",@"F",@"G",@"C",@"H",@"I",@"J",@"K"];
+    NSArray * ins = @[@"D",@"F",@"E",@"G",@"B",@"A",@"C",@"I",@"K",@"J",@"H"];
+    ATree * tree = [[ATree alloc]initWith_preorders:pre inorders:ins];
+    NSLog(@"building-tree === %@",tree);
+}
 - (void)tearDown {
     [super tearDown];
 }

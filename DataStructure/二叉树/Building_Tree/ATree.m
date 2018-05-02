@@ -17,26 +17,49 @@
 -(instancetype)initWith_preorders:(NSArray *)preorders inorders:(NSArray *)inorders{
     
     if (self = [super init]) {
-        [self building_preorders:preorders inorders:inorders];
+        [self building:preorders ins:inorders];
     }
     return self ;
 }
-
-- (ANode *)
-
-- (void)building_preorders:(NSArray *)pres inorders:(NSArray *)inorders{
+- (void)building:(NSArray *)pres ins:(NSArray *)ins{
+   
+    _root = [self building_preorders:pres inorders:ins];
     
-    if (!pres || pres.count == 0 ||!inorders ||inorders.count == 0 || pres.count != inorders.count) {
-        return ;
+}
+
+- (ANode *)building_preorders:(NSArray *)pres inorders:(NSArray *)ins {
+    
+    if (!pres || pres.count == 0 ||!ins || ins.count == 0) {
+        return nil;
     }
-    _root = [ANode new];
-    _root.value = pres.firstObject ;
+    ANode * node = [ANode new];
+    node.value = pres.firstObject ;
     
-    NSInteger idx_root = [inorders indexOfObject:pres.firstObject];
-    NSArray * lefts = [inorders subarrayWithRange:NSMakeRange(0, idx_root)];
-    NSArray * rights = [inorders subarrayWithRange:NSMakeRange(idx_root + 1, inorders.count - 1 - idx_root)] ;
+    int l_len = 0 ;
+    while (pres[0] != ins[l_len] && l_len < pres.count) {
+        ++ l_len ;
+    }
     
+    NSMutableArray * l_pres = [NSMutableArray array];
+    NSMutableArray * l_ins = [NSMutableArray array];
+    NSMutableArray * r_pres = [NSMutableArray array];
+    NSMutableArray * r_ins = [NSMutableArray array];
+    for (int i = 0; i < l_len; i++) {
+        [l_pres addObject:pres[i + 1]];
+        [l_ins addObject:ins[i]];
+    }
+    for (int i = l_len + 1; i< pres.count; i++) {
+        [r_pres addObject:pres[i]];
+        [r_ins addObject:ins[i]];
+    }
+    
+    node.left = [self building_preorders:l_pres inorders:l_ins];
+    node.right = [self building_preorders:r_pres inorders:r_ins];
+    
+    return node ;
     
     
 }
+
+
 @end
