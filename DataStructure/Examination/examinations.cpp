@@ -79,3 +79,82 @@ void replace_string(char * str , int length){
     }
     printf("%s" ,new_char);
 }
+
+int StackSolution::pop(){
+    if (stack2.empty()) {
+        while (!stack1.empty()) {
+            int val = stack1.top() ;
+            stack1.pop();
+            stack2.push(val);
+        }
+    }
+    int val = stack2.top() ;
+    stack2.pop();
+    return val ;
+}
+void StackSolution::push(int val){
+    stack1.push(val);
+}
+
+int minimum_in_rotate_array (vector<int> array){
+    if (array.empty()) {
+        return 0 ;
+    }
+    for (int i = 0; i< array.size(); i++) {
+        if (array[i] > array[i + 1]) {
+            return array[i + 1];
+        }
+    }
+    return array[0];
+    
+}
+int fibonacci (int n) {
+    
+    if (n <= 0) {
+        return 0 ;
+    }
+    if (n == 1 || n == 2) {
+        return 1 ;
+    }
+    
+    int i = 2 ;
+    int fibn1 = 1;
+    int fibn2 = 1;
+    int fibn = 0 ;
+    while (i < n) {
+        
+        fibn = fibn1 + fibn2 ;
+        
+        fibn1 = fibn2 ;
+        fibn2 = fibn ;
+        
+        i++ ;
+    }
+    return fibn ;
+}
+
+int jump_steps(int n){
+    // f(n) = f(n-1)+ (n-2);
+    if (n < 0) {
+        return 0 ;
+    }
+    if (n == 1 || n == 2) {
+        return n ;
+    }
+    return fibonacci(n + 1);
+}
+
+int perv_jump_steps(int n)  {
+    
+    if (n <= 0) {
+        return 0 ;
+    }
+    if (n == 1) {
+        return 1 ;
+    }
+    //隔板问题。n个台阶可以最多插入n-1个隔板，隔板数量 在1~n-1 个之间。 分割方法有:
+    //C(n-1 ,1) n-1 个分割位，只随机插入一个隔板。
+    //C(n-1 ,1) + C(n-1 ,2) + C(n-1 ,3) + C(n-1 ,4).....C(n-1 ,n-1); = 2^(n-1);
+    return 1<<(--n);
+}
+
