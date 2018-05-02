@@ -8,12 +8,17 @@
 
 #import "SingleLinkedList.h"
 
-@implementation SingleLinkedList
+@implementation SingleLinkedList{
+    CFMutableDictionaryRef  _dic ;
+    
+}
 
 - (instancetype)init{
     if (self = [super init]) {
         
         _length = 0 ;
+        _dic = CFDictionaryCreateMutable(kCFAllocatorDefault, 0, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks) ;
+
     }
     return self ;
 }
@@ -23,8 +28,7 @@
     if (obj == nil || key.length == 0 || !key) {
         return ;
     }
-    
-    SingleLinkedNode * node = [self value_for_key:key];
+    SingleLinkedNode * node = CFDictionaryGetValue(_dic,  (__bridge const void *)key) ;
     if (node) {
         node.obj = obj;
     }else{
@@ -36,6 +40,7 @@
             _tail.nextNode = nd ;
             _tail = nd ;
         }
+        CFDictionarySetValue(_dic,  (__bridge const void *)key, (__bridge const void *)nd) ;
         _length ++ ;
     }
 
@@ -47,7 +52,7 @@
         [self set_obj:obj for_key:key];
         return ;
     }
-    SingleLinkedNode * node = [self value_for_key:key];
+    SingleLinkedNode * node = CFDictionaryGetValue(_dic,  (__bridge const void *)key) ;
     if (node) {
         NSLog(@"obj already exist");
         return ;
@@ -57,6 +62,7 @@
     nd.nextNode = _header ;
     _header = nd ;
     _length ++ ;
+    CFDictionarySetValue(_dic,  (__bridge const void *)key, (__bridge const void *)nd) ;
 }
 
 - (void)remove_obj_for_key:(NSString *)key{
@@ -155,8 +161,16 @@
         }
     }
 }
-
-- (void)print_all_nodes {
+- (void)print_all_nodes_reversily {
     
+    if (!_header) {
+        return ;
+    }
+    [self reverse];
+    SingleLinkedNode * cur = _header ;
+    while (cur) {
+        NSLog(@"cur === %@" ,cur.obj);
+        cur = cur.nextNode ;
+    }
 }
 @end

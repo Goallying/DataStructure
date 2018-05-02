@@ -44,21 +44,21 @@
 - (void)test_print_chain {
     //
     //单向链表
-//    SingleLinkedList * singleList = [SingleLinkedList new];
-//    [singleList set_obj:@"1" for_key:@"1"];
-//    [singleList set_obj:@"2" for_key:@"2"];
-//    [singleList set_obj:@"3" for_key:@"3"];
-//    [singleList set_obj:@"4" for_key:@"4"];
-//    [singleList set_obj:@"5" for_key:@"5"];
-//    [singleList print_all_nodes];
+    SingleLinkedList * singleList = [SingleLinkedList new];
+    [singleList set_obj:@"1" for_key:@"1"];
+    [singleList set_obj:@"2" for_key:@"2"];
+    [singleList set_obj:@"3" for_key:@"3"];
+    [singleList set_obj:@"4" for_key:@"4"];
+    [singleList set_obj:@"5" for_key:@"5"];
+    [singleList print_all_nodes_reversily];
     //双向链表
-    LinkedMap * map = [LinkedMap new];
-    [map set_obj:@"1" for_key:@"1"];
-    [map set_obj:@"2" for_key:@"2"];
-    [map set_obj:@"3" for_key:@"3"];
-    [map set_obj:@"4" for_key:@"4"];
-    [map set_obj:@"5" for_key:@"5"];
-    [map print_all_nodes];
+//    LinkedMap * map = [LinkedMap new];
+//    [map set_obj:@"1" for_key:@"1"];
+//    [map set_obj:@"2" for_key:@"2"];
+//    [map set_obj:@"3" for_key:@"3"];
+//    [map set_obj:@"4" for_key:@"4"];
+//    [map set_obj:@"5" for_key:@"5"];
+//    [map print_all_nodes_reversily];
 }
 
 - (void)tearDown {

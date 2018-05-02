@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5526D9E920945B8600D0934E /* examinations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5526D9E720945B8600D0934E /* examinations.cpp */; };
 		5526D9F12094639D00D0934E /* DataStructureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5526D9F02094639D00D0934E /* DataStructureTests.m */; };
+		AE08922A209607E000D92852 /* ATree.m in Sources */ = {isa = PBXBuildFile; fileRef = AE089229209607E000D92852 /* ATree.m */; };
+		AE08922F2096085000D92852 /* ANode.m in Sources */ = {isa = PBXBuildFile; fileRef = AE08922E2096085000D92852 /* ANode.m */; };
 		AE0FFD8D208B5D2B006CDB0D /* SingleLinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0FFD8C208B5D2B006CDB0D /* SingleLinkedList.m */; };
 		AE0FFD90208B6A86006CDB0D /* SingleLinkedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0FFD8F208B6A86006CDB0D /* SingleLinkedNode.m */; };
 		AE38410C209211CB005829D3 /* AVL_Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = AE38410B209211CB005829D3 /* AVL_Tree.m */; };
@@ -42,6 +44,10 @@
 		5526D9EE2094639D00D0934E /* DataStructureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataStructureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5526D9F02094639D00D0934E /* DataStructureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataStructureTests.m; sourceTree = "<group>"; };
 		5526D9F22094639D00D0934E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE089228209607E000D92852 /* ATree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATree.h; sourceTree = "<group>"; };
+		AE089229209607E000D92852 /* ATree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATree.m; sourceTree = "<group>"; };
+		AE08922D2096085000D92852 /* ANode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANode.h; sourceTree = "<group>"; };
+		AE08922E2096085000D92852 /* ANode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANode.m; sourceTree = "<group>"; };
 		AE0FFD8B208B5D2B006CDB0D /* SingleLinkedList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleLinkedList.h; sourceTree = "<group>"; };
 		AE0FFD8C208B5D2B006CDB0D /* SingleLinkedList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleLinkedList.m; sourceTree = "<group>"; };
 		AE0FFD8E208B6A86006CDB0D /* SingleLinkedNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleLinkedNode.h; sourceTree = "<group>"; };
@@ -107,6 +113,28 @@
 			path = DataStructureTests;
 			sourceTree = "<group>";
 		};
+		AE08922B209607FF00D92852 /* AVL_Tree */ = {
+			isa = PBXGroup;
+			children = (
+				AE38410D209211EB005829D3 /* AVLNode.h */,
+				AE38410E209211EB005829D3 /* AVLNode.m */,
+				AE38410A209211CB005829D3 /* AVL_Tree.h */,
+				AE38410B209211CB005829D3 /* AVL_Tree.m */,
+			);
+			path = AVL_Tree;
+			sourceTree = "<group>";
+		};
+		AE08922C2096081100D92852 /* Building_Tree */ = {
+			isa = PBXGroup;
+			children = (
+				AE08922D2096085000D92852 /* ANode.h */,
+				AE08922E2096085000D92852 /* ANode.m */,
+				AE089228209607E000D92852 /* ATree.h */,
+				AE089229209607E000D92852 /* ATree.m */,
+			);
+			path = Building_Tree;
+			sourceTree = "<group>";
+		};
 		AE0FFD89208B5CD3006CDB0D /* 单向链表 */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,13 +160,11 @@
 		AE4E720B208C8EDF00D9552C /* 二叉树 */ = {
 			isa = PBXGroup;
 			children = (
+				AE08922C2096081100D92852 /* Building_Tree */,
+				AE08922B209607FF00D92852 /* AVL_Tree */,
 				AE4E720F208C8FC600D9552C /* Tree */,
 				AE4E720C208C8EF800D9552C /* Tree.h */,
 				AE4E720D208C8EF800D9552C /* Tree.m */,
-				AE38410D209211EB005829D3 /* AVLNode.h */,
-				AE38410E209211EB005829D3 /* AVLNode.m */,
-				AE38410A209211CB005829D3 /* AVL_Tree.h */,
-				AE38410B209211CB005829D3 /* AVL_Tree.m */,
 			);
 			path = "二叉树";
 			sourceTree = "<group>";
@@ -303,9 +329,11 @@
 				AE66BFBF2078977800C4459A /* OBJECT.m in Sources */,
 				AE0FFD8D208B5D2B006CDB0D /* SingleLinkedList.m in Sources */,
 				5526D9E920945B8600D0934E /* examinations.cpp in Sources */,
+				AE08922A209607E000D92852 /* ATree.m in Sources */,
 				AE38410F209211EB005829D3 /* AVLNode.m in Sources */,
 				AE4E720A208C35A400D9552C /* MapNode.m in Sources */,
 				AE66BFA92078939200C4459A /* AppDelegate.m in Sources */,
+				AE08922F2096085000D92852 /* ANode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

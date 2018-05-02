@@ -154,9 +154,14 @@
     return result ;
 }
 
-- (void)print_all_nodes {
-    if (!_header) {
+- (void)print_all_nodes_reversily{
+    if (!_header || !_tail) {
         return ;
+    }
+    MapNode * cur = _tail ;
+    while (cur) {
+        NSLog(@"cur == %@" ,cur.value);
+        cur = cur.preNode ;
     }
     
 }
