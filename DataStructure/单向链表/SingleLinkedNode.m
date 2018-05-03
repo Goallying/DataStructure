@@ -18,5 +18,11 @@
     }
     return self ;
 }
+- (NSInteger)number{
+    if (_number == 0 ||!_number) {
+        _number = [_obj integerValue];
+    }
+    return _number ;
+}
 
 @end

@@ -67,5 +67,12 @@ void reorder_array(vector<int> array) ;
 
 #pragma mark --
 #pragma mark -- 链表中倒数第k个结点
-// @see 单向链表实现。
+//@see 单向链表实现 (node_for_reversily_index)。
+#pragma mark --
+#pragma mark -- 反转链表
+//@see 单向链表实现 (reverse)。
+#pragma mark --
+#pragma mark -- 合并两个排序的链表
+//@see unit-test -> test_combine_chain
+
 #endif /* examinations_hpp */

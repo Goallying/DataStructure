@@ -72,6 +72,55 @@
 //    [map print_all_nodes_reversily];
 }
 #pragma mark --
+#pragma mark -- 合并两个排序的链表
+- (void)test_combine_chain {
+    
+    SingleLinkedList * singleList1 = [SingleLinkedList new];
+    [singleList1 set_obj:@"1" for_key:@"1"];
+    [singleList1 set_obj:@"2" for_key:@"2"];
+    [singleList1 set_obj:@"3" for_key:@"3"];
+    [singleList1 set_obj:@"4" for_key:@"4"];
+    [singleList1 set_obj:@"5" for_key:@"5"];
+    
+    SingleLinkedList * singleList2 = [SingleLinkedList new];
+    [singleList2 set_obj:@"2" for_key:@"2"];
+    [singleList2 set_obj:@"4" for_key:@"4"];
+    [singleList2 set_obj:@"6" for_key:@"6"];
+    [singleList2 set_obj:@"7" for_key:@"7"];
+    [singleList2 set_obj:@"10" for_key:@"10"];
+    // 合并完：1，2，3，4，5，6，7，10.
+    SingleLinkedList * list_combine = [SingleLinkedList new];
+    SingleLinkedNode * f_node = singleList1.header ;
+    SingleLinkedNode * s_node = singleList2.header ;
+   
+    while (f_node || s_node) {
+        
+        if (!f_node && s_node) {
+            [list_combine set_obj:s_node.obj for_key:s_node.key];
+            s_node = s_node.nextNode ;
+        }else if (!s_node &&f_node){
+            [list_combine set_obj:f_node.obj for_key:f_node.key];
+            f_node = f_node.nextNode ;
+        }else if (f_node.number > s_node.number) {
+            [list_combine set_obj:s_node.obj for_key:s_node.key];
+            s_node = s_node.nextNode ;
+        }else if (f_node.number == s_node.number){
+            [list_combine set_obj:f_node.obj for_key:f_node.key];
+            f_node = f_node.nextNode ;
+            s_node = s_node.nextNode ;
+        }else{
+            [list_combine set_obj:f_node.obj for_key:f_node.key];
+            f_node = f_node.nextNode ;
+        }
+    }
+    
+    SingleLinkedNode * p_node = list_combine.header ;
+    while (p_node) {
+        NSLog(@"-- %@\n" ,p_node.obj);
+        p_node = p_node.nextNode ;
+    }
+}
+#pragma mark --
 #pragma mark -- 重建二叉树
 - (void)test_rebuilding_tree{
     //先序：ABDEFGCHIJK

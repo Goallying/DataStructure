@@ -13,6 +13,7 @@
 @property (nonatomic ,strong)id obj ;
 @property (nonatomic ,strong ,readonly)NSString * key ;
 @property (nonatomic ,strong)SingleLinkedNode * nextNode ;
+@property (nonatomic ,assign)NSInteger number ;
 
 - (instancetype)initWithObj:(id)obj forKey:(NSString *)key;
 
