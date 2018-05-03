@@ -43,7 +43,6 @@
         CFDictionarySetValue(_dic,  (__bridge const void *)key, (__bridge const void *)nd) ;
         _length ++ ;
     }
-
 }
 
 -(void)insert_obj_at_head:(id)obj for_key:(NSString *)key{
@@ -101,9 +100,7 @@
         }else{
             pre = pre.nextNode ;
         }
-        
     }
-    
 }
 
 - (void)removeAllObj{
@@ -140,7 +137,6 @@
     if (_length <= 1) {
         return ;
     }
-    
     SingleLinkedNode * pre = nil ;
     SingleLinkedNode * cur = _header ;
     SingleLinkedNode * next = nil ;
@@ -174,6 +170,27 @@
     }
 }
 
+- (SingleLinkedNode *)node_for_reversily_index:(NSInteger)idx{
+    // 没有倒数第0 个说法？？？？。
+    if (_length == 0 || idx > _length || idx <= 0) {
+        return nil ;
+    }
+    // 快慢指针方法。比如倒数第三个， 正数就是链表第 2 个元素。
+    SingleLinkedNode * fir = _header ;
+    SingleLinkedNode * sec = _header ;
+    NSInteger target = 0 ;
+    //先走k-1步。
+    while (target < idx - 1) {
+        sec = sec.nextNode ;
+        target ++ ;
+    }
+    // 一起走
+    while (sec.nextNode) {
+        sec = sec.nextNode ;
+        fir = fir.nextNode ;
+    }
+    return fir ;
+}
 - (void)dealloc{
     CFRelease(_dic);
 }

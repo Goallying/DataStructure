@@ -46,11 +46,26 @@ int minimum_in_rotate_array (vector< int > array);
 int fibonacci (int n) ;
 
 #pragma mark --
-#pragma mark -- 跳台阶问题
+#pragma mark -- 跳台阶问题 (矩阵覆盖).
 int jump_steps(int n) ;
 
 #pragma mark --
 #pragma mark -- 改-跳台阶问题
 int perv_jump_steps(int n) ;
 
+#pragma mark --
+#pragma mark -- 二进制中1的位数
+int binary_count_1(int n);
+
+#pragma mark --
+#pragma mark -- 数值的整数次方
+double power (double n , int exp);
+
+#pragma mark --
+#pragma mark -- 调整数组顺序使奇数位于偶数前面
+void reorder_array(vector<int> array) ;
+
+#pragma mark --
+#pragma mark -- 链表中倒数第k个结点
+// @see 单向链表实现。
 #endif /* examinations_hpp */

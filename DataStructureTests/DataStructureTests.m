@@ -46,6 +46,8 @@
 }
 #pragma mark --
 #pragma mark -- 打印单双链表
+#pragma mark --
+#pragma mark -- 链表中倒数第k个结点
 - (void)test_print_chain {
     //
     //单向链表
@@ -55,7 +57,11 @@
     [singleList set_obj:@"3" for_key:@"3"];
     [singleList set_obj:@"4" for_key:@"4"];
     [singleList set_obj:@"5" for_key:@"5"];
-    [singleList print_all_nodes_reversily];
+    //倒序打印
+//    [singleList print_all_nodes_reversily];
+    //链表中倒数第k个结点
+    SingleLinkedNode * kNode = [singleList node_for_reversily_index:5];
+    XCTAssertEqual([kNode.obj integerValue], 1);
     //双向链表
 //    LinkedMap * map = [LinkedMap new];
 //    [map set_obj:@"1" for_key:@"1"];
@@ -122,6 +128,24 @@
 - (void)test_perv_jump_step{
     int kinds = perv_jump_steps(4);
     NSLog(@"perv jump kinds === %d",kinds);
+}
+#pragma mark --
+#pragma mark -- 二进制中1的位数
+- (void)test_binary_1_count{
+    int c = binary_count_1(-1);
+    XCTAssertEqual(c, 32);
+}
+#pragma mark --
+#pragma mark -- 数值的整数次方
+- (void)test_power{
+    double val = power(2, -1);
+    NSLog(@"val ====== %f" ,val);
+}
+#pragma mark --
+#pragma mark -- 调整数组顺序使奇数位于偶数前面
+- (void)test_reorder{
+    vector<int> array = {2,5,8,6,7,4,1,11,10};
+    reorder_array(array);
 }
 - (void)tearDown {
     [super tearDown];

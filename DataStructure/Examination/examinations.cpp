@@ -157,4 +157,107 @@ int perv_jump_steps(int n)  {
     //C(n-1 ,1) + C(n-1 ,2) + C(n-1 ,3) + C(n-1 ,4).....C(n-1 ,n-1); = 2^(n-1);
     return 1<<(--n);
 }
+int binary_count_1(int n){
+    int c = 0 ;
+//    int flag = 1 ;
+//    while (flag != 0) {
+//        if (n & flag) {
+//            c++ ;
+//        }
+//        flag = flag<<1 ;
+//    }
+//    // -1 死循环
+//    while (n) {
+//        c += (n & 1);
+//        n >>= 1;
+//        printf("n === %d",n);
+//    }
+    
+    // -1 的1 的个数 == 32 （ 11111111 11111111 11111111 11111111）
+    //每次都少了一位 最右边的1 ，直到n=0.
+    while (n)
+    {
+        n = n&(n - 1);
+        c ++;
+    }
+    return c ;
+}
+double power (double n , int exp) {
+    //0^-1 ,0^0 无意义
+    if (n > -0.0000001 && n< 0.0000001 && exp <= 0) {
+        throw "error occured" ;
+    }
+    //0的n次方
+    if (n > -0.0000001 && n< 0.0000001){
+        return 0.0 ;
+    }
+    //n的0 次方
+    if (exp == 0) {
+        return 1 ;
+    }
+    unsigned int abs_exp = exp < 0? -exp:exp ;
+    double result = 1.0;
+    
+    while (abs_exp) {
+        result *= n ;
+        abs_exp -- ;
+    }
+    if (exp < 0) {
+        return  1/result ;
+    }
+    return result ;
+}
 
+void reorder_array(vector<int> array){
+    
+    if (array.empty() || array.size() == 1) {
+        return ;
+    }
+    
+    //常规做法。
+    unsigned long len = array.size() ;
+//    vector<int> evens;
+//    vector<int> odds ;
+//
+//    for (unsigned long i = 0; i< len; i++) {
+//        if (array[i] % 2 == 0) {
+//            evens.push_back(array[i]);
+//        }else{
+//            odds.push_back(array[i]);
+//        }
+//    }
+//    unsigned long even_len = evens.size() ;
+//    unsigned long odd_len = odds.size() ;
+//    unsigned long even_idx = 0 ;
+//    unsigned long odd_idx = 0 ;
+//
+//    while (odd_idx < odd_len) {
+//        array[odd_idx] = odds[odd_idx];
+//        odd_idx ++ ;
+//    }
+//    while (even_idx < even_len) {
+//        array[odd_len + even_idx] = evens[even_idx];
+//        even_idx ++ ;
+//    }
+    
+  // 改进做法 ，直接删除偶数插入到数组尾部。
+    vector<int>::iterator iter = array.begin();
+    unsigned long idx = 0 ;
+    int c = 0 ;
+    while (idx < len) {
+        if (array[c] % 2 == 0) {
+            int val =  array[c];
+            array.erase(iter);
+            array.push_back(val);
+
+        }else{
+            iter ++ ;
+            c++ ;
+        }
+        idx ++ ;
+    }
+    
+//    for (int i = 0; i < array.size(); i++) {
+//        printf("======%d" ,array[i]);
+//    }
+}

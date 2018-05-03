@@ -26,4 +26,7 @@
 - (void)reverse ;
 - (void)print_all_nodes_reversily ;
 
+//倒数第几个节点。
+- (SingleLinkedNode *)node_for_reversily_index:(NSInteger)idx ;
+
 @end
