@@ -196,6 +196,28 @@
     vector<int> array = {2,5,8,6,7,4,1,11,10};
     reorder_array(array);
 }
+#pragma mark --
+#pragma mark -- 树的子结构
+- (void)test_sub_tree{
+    //no imp.
+}
+- (void)test_print_matric {
+    //    1,  2,  3,  4
+    //
+    //    5,  6,  7,  8
+    //
+    //    9, 10, 11, 12
+    //
+    //    3, 14, 15, 16
+    vector< vector<int> > array = {
+        {1,  2,  3,  4},
+        {5,  6,  7,  8},
+        {9, 10, 11, 12},
+        {3, 14, 15, 16}
+    };
+    print_matrix_clockwisily(array);
+    
+}
 - (void)tearDown {
     [super tearDown];
 }

@@ -74,5 +74,8 @@ void reorder_array(vector<int> array) ;
 #pragma mark --
 #pragma mark -- 合并两个排序的链表
 //@see unit-test -> test_combine_chain
+#pragma mark --
+#pragma mark -- 顺时针打印矩阵
+void print_matrix_clockwisily(vector<vector <int> >array) ;
 
 #endif /* examinations_hpp */

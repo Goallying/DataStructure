@@ -261,3 +261,53 @@ void reorder_array(vector<int> array){
 //        printf("======%d" ,array[i]);
 //    }
 }
+void print_matrix_clockwisily(vector<vector <int> >array){
+//    1,  2,  3,  4
+//    5,  6,  7,  8
+//    9, 10, 11, 12
+//    3, 14, 15, 16
+    int rows = (int)array.size();
+    int cols = (int)array[0].size() ;
+    
+    bool reverse = false ;
+    bool origin = true ;
+    int  verctor_r = 0 ;
+    while (verctor_r < rows) {
+        
+        origin = rows % 2 == 0 ;
+        int col ;
+        int row ;
+        col = reverse?cols:0 ;
+        row = reverse?rows:0 ;
+        
+        if (reverse == false) {
+            while (col < cols) {
+                unsigned long val = array[row][col];
+                col ++ ;
+                printf("--- %ld" ,val);
+            }
+            while (row < rows - 1) {
+                row ++ ;
+                unsigned long val = array[row][col - 1];
+                printf("--- %ld" ,val);
+            }
+        }else{
+            while (col - 1 > 0) {
+                col -- ;
+                unsigned long val = array[row][col];
+                printf("--- %ld" ,val);
+            }
+            while (row > 0) {
+                unsigned long val = array[row][col - 1];
+                row -- ;
+                printf("--- %ld" ,val);
+            }
+        }
+       
+        reverse = !reverse ;
+        verctor_r ++ ;
+        
+        cols -- ;
+        rows -- ;
+    }
+}
