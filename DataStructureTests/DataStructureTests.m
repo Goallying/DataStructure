@@ -45,6 +45,18 @@
     XCTAssertTrue(res);
 }
 #pragma mark --
+#pragma mark -- 快速排序
+- (void)test_quick_sort{
+      vector< int> array =  {6  ,1  ,2 ,7, 9 , 3 , 4 ,5,10,  8} ;
+    QuickSort * sort = new QuickSort() ;
+    sort->array = array ;
+    sort->quick_sort(0, 9) ;
+    
+//    vector< int> array =  {6  ,1  ,2 ,7, 9 , 3 , 4 ,5,10,  8} ;
+//    quick_sort(array);
+
+}
+#pragma mark --
 #pragma mark -- 打印单双链表
 #pragma mark --
 #pragma mark -- 链表中倒数第k个结点

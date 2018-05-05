@@ -19,6 +19,15 @@ using namespace std ;
 bool find_num_in_array(int target , vector< vector<int> > array);
 
 #pragma mark --
+#pragma mark -- 快速排序
+void quick_sort(vector<int>array) ;
+class QuickSort{
+public:
+    void  quick_sort(int l,int r) ;
+    vector<int> array ;
+};
+
+#pragma mark --
 #pragma mark -- 替换字符串
 void replace_string(char * str , int length) ;
 

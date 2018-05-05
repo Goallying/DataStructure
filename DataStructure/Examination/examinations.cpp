@@ -34,6 +34,35 @@ bool find_num_in_array(int target , vector< vector<int> > array){
     return  res ;
     
 }
+void QuickSort::quick_sort(int l,int r){
+
+    if ( l >= r ){
+        return;
+    }
+    int mid = array[l], left = l, right = r;
+    while (left < right)
+    {
+        while (left < right && array[right] > mid)
+            right--;
+
+        array[left] = array[right];
+
+        while (left < right && array[left] <= mid )
+            left++;
+
+        array[right] = array[left];
+    }
+    for (int i = 0; i < array.size(); i ++) {
+        printf("-- %d \n" ,array[i]);
+    }
+    array[left] = mid;
+    quick_sort(l, left - 1 );
+    quick_sort(left + 1, r);
+
+    for (int i = 0; i < array.size(); i ++) {
+        printf("-- %d \n" ,array[i]);
+    }
+}
 
 void replace_string(char * str , int length){
     
@@ -152,6 +181,9 @@ int perv_jump_steps(int n)  {
     if (n == 1) {
         return 1 ;
     }
+    
+//    int c = 2 * fibonacci(n - 1);
+//    int c0 = 1<<(--n);
     //隔板问题。n个台阶可以最多插入n-1个隔板，隔板数量 在1~n-1 个之间。 分割方法有:
     //C(n-1 ,1) n-1 个分割位，只随机插入一个隔板。
     //C(n-1 ,1) + C(n-1 ,2) + C(n-1 ,3) + C(n-1 ,4).....C(n-1 ,n-1); = 2^(n-1);
