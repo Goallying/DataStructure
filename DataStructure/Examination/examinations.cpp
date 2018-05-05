@@ -34,6 +34,84 @@ bool find_num_in_array(int target , vector< vector<int> > array){
     return  res ;
     
 }
+void bubble_sort(vector<int>array){
+    
+    if (array.empty() || array.size() == 1) {
+        return ;
+    }
+    int c = (int)array.size() ;
+    for (int i = 0; i < c - 1 ; i ++) {
+        for (int j = 0; j < c - 1 - i; j ++) {
+            if (array[j] > array[j + 1]) {
+                int tp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = tp ;
+            }
+        }
+    }
+    
+    for (int i = 0 ; i < array.size(); i ++) {
+        printf("---- %d" ,array[i]);
+    }
+    
+}
+void bubble_sort_optimize1(vector<int>array)  {
+    
+    if (array.empty() || array.size() == 1) {
+        return ;
+    }
+    
+    int c = (int)array.size() ;
+    for (int i = 0; i < c - 1 ; i ++) {
+        bool k = false ;
+        for (int j = 0; j < c - 1 - i; j ++) {
+            if (array[j] > array[j + 1]) {
+                int tp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = tp ;
+                k = true ;
+            }
+        }
+        if (k == false) {
+            break ;
+        }
+    }
+    
+    for (int i = 0 ; i < array.size(); i ++) {
+        printf("---- %d" ,array[i]);
+    }
+}
+void bubble_sort_optimize2(vector<int>array) {
+    if (array.empty() || array.size() == 1) {
+        return ;
+    }
+//    https://blog.csdn.net/bitboss/article/details/51559034
+    int c = (int)array.size() ;
+    int n = c - 1 ;
+    int last = 0 ;
+    
+    for (int i = 0; i < c ; i ++) {
+        bool k = false ;
+        for (int j = 0; j < n ; j ++) {
+            if (array[j] > array[j + 1]) {
+                int tp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = tp ;
+                k = true ;
+                last = j ;
+            }
+        }
+        if (k == false) {
+            break ;
+        }
+        n = last ;
+    }
+    
+    for (int i = 0 ; i < array.size(); i ++) {
+        printf("---- %d" ,array[i]);
+    }
+}
+
 void QuickSort::quick_sort(int l,int r){
 
     if ( l >= r ){

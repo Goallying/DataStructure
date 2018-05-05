@@ -45,6 +45,17 @@
     XCTAssertTrue(res);
 }
 #pragma mark --
+#pragma mark -- 冒泡排序
+- (void)test_bubble_sort{
+    vector< int> array =  {6  ,1  ,2 ,7, 9 , 3 , 4 ,5,10,  8} ;
+//    bubble_sort(array);
+    
+//    vector< int> array =  {1,2,3,4,5,6,7,8} ;
+//    bubble_sort_optimize1(array);
+    
+    bubble_sort_optimize2(array);
+}
+#pragma mark --
 #pragma mark -- 快速排序
 - (void)test_quick_sort{
       vector< int> array =  {6  ,1  ,2 ,7, 9 , 3 , 4 ,5,10,  8} ;

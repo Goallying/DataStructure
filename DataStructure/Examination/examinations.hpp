@@ -19,6 +19,15 @@ using namespace std ;
 bool find_num_in_array(int target , vector< vector<int> > array);
 
 #pragma mark --
+#pragma mark -- 冒泡排序
+void bubble_sort(vector<int>array) ;
+#pragma mark --
+#pragma mark -- 冒泡排序-优化1
+void bubble_sort_optimize1(vector<int>array) ;
+#pragma mark --
+#pragma mark -- 冒泡排序-优化1
+void bubble_sort_optimize2(vector<int>array) ;
+#pragma mark --
 #pragma mark -- 快速排序
 void quick_sort(vector<int>array) ;
 class QuickSort{
