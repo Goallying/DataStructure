@@ -317,6 +317,27 @@ double power (double n , int exp) {
     }
     return result ;
 }
+double power_optimize(double n ,int exp){
+    //0^-1 ,0^0 无意义
+    if (n > -0.0000001 && n< 0.0000001 && exp <= 0) {
+        throw "error occured" ;
+    }
+    //0的n次方
+    if (n > -0.0000001 && n< 0.0000001){
+        return 0.0 ;
+    }
+    //n的0 次方
+    if (exp == 0) {
+        return 1 ;
+    }
+//    1<<5 ,1 向高位移动5次。 exp >>1 向低位移动
+// 2分法减少乘法次数， 比power 的时间复杂度少了很多。
+    double result = power_optimize(n, exp >> 1);
+    result = result*result;
+    if ( (exp & 0x1) == 1)
+        result *= n;
+    return result;
+}
 
 void reorder_array(vector<int> array){
     

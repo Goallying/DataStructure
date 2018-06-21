@@ -211,7 +211,9 @@
 #pragma mark -- 数值的整数次方
 - (void)test_power{
     double val = power(2, -1);
-    NSLog(@"val ====== %f" ,val);
+    
+    double val2 = power_optimize(2,5);
+    NSLog(@"val ====== %f ,val2 == %f" ,val,val2);
 }
 #pragma mark --
 #pragma mark -- 调整数组顺序使奇数位于偶数前面

@@ -78,7 +78,7 @@ int binary_count_1(int n);
 #pragma mark --
 #pragma mark -- 数值的整数次方
 double power (double n , int exp);
-
+double power_optimize(double n ,int exp);
 #pragma mark --
 #pragma mark -- 调整数组顺序使奇数位于偶数前面
 void reorder_array(vector<int> array) ;
