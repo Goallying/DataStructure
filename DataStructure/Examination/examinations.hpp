@@ -12,8 +12,8 @@
 #include <stdio.h>
 #include <vector>
 #include <stack>
+#include <string.h>
 using namespace std ;
-
 #pragma mark --
 #pragma mark -- 查找字符串
 bool find_num_in_array(int target , vector< vector<int> > array);
@@ -82,7 +82,6 @@ double power_optimize(double n ,int exp);
 #pragma mark --
 #pragma mark -- 调整数组顺序使奇数位于偶数前面
 void reorder_array(vector<int> array) ;
-
 #pragma mark --
 #pragma mark -- 链表中倒数第k个结点
 //@see 单向链表实现 (node_for_reversily_index)。
@@ -96,4 +95,12 @@ void reorder_array(vector<int> array) ;
 #pragma mark -- 顺时针打印矩阵
 void print_matrix_clockwisily(vector<vector <int> >array) ;
 
+#pragma mark --
+#pragma mark -- 考研书籍题目复习
+#pragma mark --
+#pragma mark -- 【135792468】排序
+void sort_ascend_array(int A[] ,int m ,int n);
+#pragma mark --
+#pragma mark -- KMP
+int index_of_str_start(string * str , string * substr);
 #endif /* examinations_hpp */

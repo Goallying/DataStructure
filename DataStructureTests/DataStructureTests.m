@@ -243,6 +243,14 @@
     print_matrix_clockwisily(array);
     
 }
+
+
+#pragma mark --
+#pragma mark -- 考研试题
+- (void)test_sort_ascend{
+    int A[] = {1,3,5,7,9,2,4,6,8};
+    sort_ascend_array(A,5,4);
+}
 - (void)tearDown {
     [super tearDown];
 }

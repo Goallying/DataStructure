@@ -7,9 +7,8 @@
 //
 
 #include "examinations.hpp"
-
 bool find_num_in_array(int target , vector< vector<int> > array){
-    
+
     bool res = false ;
     if (array.empty()) {
         return res ;
@@ -143,6 +142,7 @@ void QuickSort::quick_sort(int l,int r){
 }
 
 void replace_string(char * str , int length){
+    
     
     if (length == 0 || str == NULL) {
         return ;
@@ -441,4 +441,28 @@ void print_matrix_clockwisily(vector<vector <int> >array){
         cols -- ;
         rows -- ;
     }
+}
+
+#pragma mark --
+#pragma mark -- 题目
+int index_of_str_start(string * str , string * substr){
+}
+
+void sort_ascend_array(int A[] ,int m ,int n){
+//    int A[] = {1,3,5,7,9,2,4,6,8};
+    int k = 0;
+    for (int i = m; i<m+n; ++i) {
+        int temp = A[i];
+        for (int j = i-1; j>= k; --j) {
+            if (A[j] > temp) {
+                A[j+1] = A[j];
+            }else{
+                k = j+1 ;
+                A[j+1] = temp ;
+            }
+        }
+    }
+//    for (int k = 0; k<m+n; k++) {
+//        printf("---%d",A[k]);
+//    }
 }
